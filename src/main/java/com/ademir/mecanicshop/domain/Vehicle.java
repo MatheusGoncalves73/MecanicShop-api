@@ -12,21 +12,29 @@ import javax.persistence.ManyToOne;
 
 @Entity(name = "vehicles")
 public class Vehicle implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String plate;
 	private String model;
 	private Integer year;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 
 	public Vehicle() {
+	}
+
+	public Vehicle(String plate, String model, Integer year, Customer customer) {
+		super();
+		this.plate = plate;
+		this.model = model;
+		this.year = year;
+		this.customer = customer;
 	}
 
 	public Vehicle(Integer id, String plate, String model, Integer year) {

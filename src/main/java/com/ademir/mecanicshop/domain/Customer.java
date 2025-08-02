@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class Customer implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -21,6 +21,13 @@ public class Customer implements Serializable {
 	private String phone;
 
 	public Customer() {
+	}
+
+	public Customer(String name, String email, String phone) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
 	}
 
 	public Customer(Integer id, String name, String email, String phone) {
