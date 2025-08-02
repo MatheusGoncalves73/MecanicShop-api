@@ -1,4 +1,4 @@
-package com.ademir.mecanicshop.repositores;
+package com.ademir.mecanicshop.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

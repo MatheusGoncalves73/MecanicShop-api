@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import com.ademir.mecanicshop.domain.Customer;
 import com.ademir.mecanicshop.domain.ServiceOrder;
 import com.ademir.mecanicshop.domain.Vehicle;
-import com.ademir.mecanicshop.repositores.CustomerRepository;
-import com.ademir.mecanicshop.repositores.ServiceOrderRepository;
-import com.ademir.mecanicshop.repositores.VehicleRepository;
+import com.ademir.mecanicshop.repositories.CustomerRepository;
+import com.ademir.mecanicshop.repositories.ServiceOrderRepository;
+import com.ademir.mecanicshop.repositories.VehicleRepository;
 
 @Service
 public class DbService {
