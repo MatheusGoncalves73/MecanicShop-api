@@ -1,12 +1,17 @@
 package com.ademir.mecanicshop.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity(name = "customers")
 public class Customer implements Serializable {
@@ -19,6 +24,9 @@ public class Customer implements Serializable {
 	private String name;
 	private String email;
 	private String phone;
+
+	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+	private List<Vehicle> vehicles;
 
 	public Customer() {
 	}
@@ -70,7 +78,14 @@ public class Customer implements Serializable {
 		this.phone = phone;
 	}
 
-	@Override
+	public List<Vehicle> getVehicles() {
+		return vehicles;
+	}
+
+	public void setVehicles(List<Vehicle> vehicles) {
+		this.vehicles = vehicles;
+	}
+
 	public int hashCode() {
 		return Objects.hash(id);
 	}
