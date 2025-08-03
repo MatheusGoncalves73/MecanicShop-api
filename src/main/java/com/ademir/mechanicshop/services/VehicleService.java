@@ -34,4 +34,9 @@ public class VehicleService {
 		return this.vehicleRepository.findAllByCustomer(customerId);
 	}
 
+	public Vehicle create(Vehicle obj) {
+		obj.setId(null);
+		return this.vehicleRepository.save(obj);
+	}
+
 }
