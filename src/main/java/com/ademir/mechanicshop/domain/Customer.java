@@ -1,6 +1,7 @@
 	package com.ademir.mechanicshop.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,7 +25,7 @@ public class Customer implements Serializable {
 	private String phone;
 
 	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
-	private List<Vehicle> vehicles;
+	private List<Vehicle> vehicles = new ArrayList<>();
 
 	public Customer() {
 	}

@@ -18,10 +18,16 @@ public class CustomerService {
 
 	public Customer findById(Integer id) {
 		Optional<Customer> obj = this.customerRepository.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Cliente de id " + id +  " não encontrado"));
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Cliente de id " + id + " não encontrado"));
 	}
-	
-	public List<Customer> findAll(){
+
+	public List<Customer> findAll() {
 		return this.customerRepository.findAll();
 	}
+
+	public Customer create(Customer obj) {
+		obj.setId(null);
+		return this.customerRepository.save(obj);
+	}
+
 }
