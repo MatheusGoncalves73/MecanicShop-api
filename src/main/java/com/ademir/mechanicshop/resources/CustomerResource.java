@@ -43,7 +43,7 @@ public class CustomerResource {
 	@PostMapping()
 	public ResponseEntity<Customer> create(@RequestBody Customer customer) {
 		customer = this.customerService.create(customer);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/customers/{id}")
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}")
 				.buildAndExpand(customer.getId()).toUri();
 		return ResponseEntity.created(uri).body(customer);
 	}
