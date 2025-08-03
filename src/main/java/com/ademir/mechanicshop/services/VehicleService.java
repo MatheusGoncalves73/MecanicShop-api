@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import com.ademir.mechanicshop.domain.Customer;
 import com.ademir.mechanicshop.domain.Vehicle;
 import com.ademir.mechanicshop.dtos.VehicleDTO;
-import com.ademir.mechanicshop.repositories.CustomerRepository;
 import com.ademir.mechanicshop.repositories.VehicleRepository;
 import com.ademir.mechanicshop.services.exceptions.DataIntegrityException;
 import com.ademir.mechanicshop.services.exceptions.ObjectNotFoundException;
@@ -20,9 +20,10 @@ public class VehicleService {
 	@Autowired
 	private VehicleRepository vehicleRepository;
 
-	@Autowired
-	private CustomerRepository customerRepository;
 
+	@Autowired
+	private CustomerService customerService;
+	
 	public Vehicle findById(Integer id) {
 		Optional<Vehicle> obj = this.vehicleRepository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Veículo de id " + id + " não encontrado"));
@@ -33,12 +34,14 @@ public class VehicleService {
 	}
 
 	public List<Vehicle> findAllByCustomerId(Integer customerId) {
-		this.customerRepository.findById(customerId);
+		this.customerService.findById(customerId);
 		return this.vehicleRepository.findAllByCustomer(customerId);
 	}
 
-	public Vehicle create(Vehicle obj) {
+	public Vehicle create(Integer customerId, Vehicle obj) {
+		Customer customer = this.customerService.findById(customerId);
 		obj.setId(null);
+		obj.setCustomer(customer);
 		return this.vehicleRepository.save(obj);
 	}
 

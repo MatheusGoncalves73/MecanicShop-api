@@ -50,10 +50,10 @@ public class VehicleResource {
 		return ResponseEntity.ok().body(vehiclesDTO);
 	}
 
-	@PostMapping()
-	public ResponseEntity<Vehicle> create(@RequestBody Vehicle obj) {
-		Vehicle vehicle = this.vehicleService.create(obj);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/vehicles/{id}").buildAndExpand(obj.getId())
+	@PostMapping("/customer/{id}")
+	public ResponseEntity<Vehicle> create(@PathVariable Integer id, @RequestBody Vehicle obj) {
+		Vehicle vehicle = this.vehicleService.create(id,obj);
+		URI uri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/vehicles/{id}").buildAndExpand(obj.getId())
 				.toUri();
 		return ResponseEntity.created(uri).body(vehicle);
 	}
