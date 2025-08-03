@@ -25,9 +25,9 @@ public class DbService {
 	private ServiceOrderRepository serviceOrderRepository;
 
 	public void seedDataEntities() {
-		Customer c1 = new Customer("Matheus Gonçalves", "matheus57.ruiz100@gmail.com", "4499971122");
-		Customer c2 = new Customer("Lucas Martins", "lucasmartins@outlook.com", "4499976122");
-		Customer c3 = new Customer("Tiago Martins", "tiagomartins@outlook.com", "4499911888");
+		Customer c1 = new Customer("Matheus Gonçalves", "matheus57.ruiz100@gmail.com", "44999711221");
+		Customer c2 = new Customer("Lucas Martins", "lucasmartins@outlook.com", "44999761229");
+		Customer c3 = new Customer("Tiago Martins", "tiagomartins@outlook.com", "44999118889");
 
 		Vehicle v1 = new Vehicle("ABC1234", "Toyota Corolla", 2015, c1);
 		Vehicle v2 = new Vehicle("DDC1222", "Civic", 2020, c1);

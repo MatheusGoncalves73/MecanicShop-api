@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -51,7 +53,7 @@ public class VehicleResource {
 	}
 
 	@PostMapping("/customer/{id}")
-	public ResponseEntity<Vehicle> create(@PathVariable Integer id, @RequestBody Vehicle obj) {
+	public ResponseEntity<Vehicle> create(@PathVariable Integer id,@Valid @RequestBody Vehicle obj) {
 		Vehicle vehicle = this.vehicleService.create(id,obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/vehicles/{id}").buildAndExpand(obj.getId())
 				.toUri();
@@ -59,7 +61,7 @@ public class VehicleResource {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<VehicleDTO> update(@PathVariable Integer id, @RequestBody VehicleDTO objDTO){
+	public ResponseEntity<VehicleDTO> update(@PathVariable Integer id,@Valid @RequestBody VehicleDTO objDTO){
 		Vehicle vehicle = this.vehicleService.update(id,objDTO);
 		return ResponseEntity.ok().body(new VehicleDTO(vehicle));
 	}

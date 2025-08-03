@@ -9,6 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,8 +26,16 @@ public class Vehicle implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@NotEmpty(message = "Número da placa do veículo é obrigatório")
+	@Length(min = 7, max = 7, message = "A placa do veículo deve ter 7 caracteres")
 	private String plate;
+	
+	@NotEmpty(message = "O modelo do veículo é obrigatório")
 	private String model;
+
+	@NotNull(message = "O ano do veículo é obrigatório")
+	@Min(message = "O ano do carro deve ser de no mínimo 1900", value = 1900)
 	private Integer year;
 
 	@JsonIgnore

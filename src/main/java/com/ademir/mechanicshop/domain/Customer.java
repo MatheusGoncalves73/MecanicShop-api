@@ -11,6 +11,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity(name = "customers")
 public class Customer implements Serializable {
@@ -20,8 +24,17 @@ public class Customer implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@NotEmpty(message = "Campo nome é obrigatório")
+	@Length(min = 3, max = 300, message = "Campo nome deve ter entre 3 e 300 caracteres")
 	private String name;
+	
+	@NotEmpty(message = "Campo e-mail é obrigatório")
+	@Email(message = "Deve ser informado um e-mail válido")
 	private String email;
+	
+	@NotEmpty(message = "Campo telefone é obrigatório")
+	@Length(min = 11, max = 11, message = "Campo telefone deve ter no máximo 11 dígitos")
 	private String phone;
 
 	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
