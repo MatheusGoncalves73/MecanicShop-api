@@ -1,4 +1,4 @@
-package com.ademir.mecanicshop.services.exceptions;
+package com.ademir.mechanicshop.services.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException {
 

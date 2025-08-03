@@ -1,4 +1,4 @@
-package com.ademir.mecanicshop.domain;
+package com.ademir.mechanicshop.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;

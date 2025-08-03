@@ -1,13 +1,13 @@
-package com.ademir.mecanicshop.services;
+package com.ademir.mechanicshop.services;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ademir.mecanicshop.domain.Customer;
-import com.ademir.mecanicshop.repositories.CustomerRepository;
-import com.ademir.mecanicshop.services.exceptions.ObjectNotFoundException;
+import com.ademir.mechanicshop.domain.Customer;
+import com.ademir.mechanicshop.repositories.CustomerRepository;
+import com.ademir.mechanicshop.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class CustomerService {

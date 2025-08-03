@@ -1,4 +1,4 @@
-package com.ademir.mecanicshop.resources;
+package com.ademir.mechanicshop.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ademir.mecanicshop.domain.Vehicle;
-import com.ademir.mecanicshop.services.VehicleService;
+import com.ademir.mechanicshop.domain.Vehicle;
+import com.ademir.mechanicshop.services.VehicleService;
 
 @RestController
 @RequestMapping("/vehicles")

@@ -1,4 +1,4 @@
-package com.ademir.mecanicshop.resources.exceptions;
+package com.ademir.mechanicshop.resources.exceptions;
 
 import javax.servlet.ServletRequest;
 
@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.ademir.mecanicshop.services.exceptions.ObjectNotFoundException;
+import com.ademir.mechanicshop.services.exceptions.ObjectNotFoundException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {

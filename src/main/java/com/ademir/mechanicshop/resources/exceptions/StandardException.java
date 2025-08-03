@@ -1,4 +1,4 @@
-package com.ademir.mecanicshop.resources.exceptions;
+package com.ademir.mechanicshop.resources.exceptions;
 
 public class StandardException {
 

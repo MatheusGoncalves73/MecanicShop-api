@@ -1,4 +1,4 @@
-package com.ademir.mecanicshop.services;
+package com.ademir.mechanicshop.services;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -6,12 +6,12 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ademir.mecanicshop.domain.Customer;
-import com.ademir.mecanicshop.domain.ServiceOrder;
-import com.ademir.mecanicshop.domain.Vehicle;
-import com.ademir.mecanicshop.repositories.CustomerRepository;
-import com.ademir.mecanicshop.repositories.ServiceOrderRepository;
-import com.ademir.mecanicshop.repositories.VehicleRepository;
+import com.ademir.mechanicshop.domain.Customer;
+import com.ademir.mechanicshop.domain.ServiceOrder;
+import com.ademir.mechanicshop.domain.Vehicle;
+import com.ademir.mechanicshop.repositories.CustomerRepository;
+import com.ademir.mechanicshop.repositories.ServiceOrderRepository;
+import com.ademir.mechanicshop.repositories.VehicleRepository;
 
 @Service
 public class DbService {
