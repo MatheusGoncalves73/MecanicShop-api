@@ -1,5 +1,6 @@
 package com.ademir.mechanicshop.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,8 @@ public class CustomerService {
 		Optional<Customer> obj = this.customerRepository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Cliente de id " + id +  " não encontrado"));
 	}
-
-	public Customer findByIdWithVehicles(Integer id) {
-		return this.customerRepository.findById(id).map((customer) -> {
-			customer.getVehicles().size();
-			return customer;
-		}).orElse(null);
-//		return null;
+	
+	public List<Customer> findAll(){
+		return this.customerRepository.findAll();
 	}
 }

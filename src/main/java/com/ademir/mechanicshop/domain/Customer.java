@@ -1,4 +1,4 @@
-package com.ademir.mechanicshop.domain;
+	package com.ademir.mechanicshop.domain;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,8 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity(name = "customers")
 public class Customer implements Serializable {
